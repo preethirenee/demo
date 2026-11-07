@@ -1,0 +1,571 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preethi Renee Gregory | Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #f8f7f4;
+            color: #252525;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 9%;
+            background: #f8f7f4;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            font-weight: bold;
+            color: #344c42;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #8b9d83;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 12%;
+            background: #e9eee8;
+            gap: 50px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-content .intro {
+            color: #718875;
+            font-weight: 600;
+            letter-spacing: 3px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1.15;
+            color: #263d32;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #849b84;
+        }
+
+        .hero p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555e56;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #344c42;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #526d5e;
+        }
+
+        .secondary {
+            border: 1px solid #344c42;
+            color: #344c42;
+        }
+
+        .secondary:hover {
+            background: #344c42;
+            color: white;
+        }
+
+        .hero-card {
+            width: 280px;
+            height: 350px;
+            background: #d3ded2;
+            border-radius: 140px 140px 15px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 25px;
+            color: #344c42;
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            flex-shrink: 0;
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 85px 12%;
+        }
+
+        .section-label {
+            color: #829783;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: #344c42;
+            margin-bottom: 25px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            line-height: 1.9;
+            color: #626262;
+            margin-bottom: 15px;
+        }
+
+        .about-box {
+            background: #e9eee8;
+            padding: 35px;
+            border-radius: 12px;
+        }
+
+        .about-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #344c42;
+            margin-bottom: 20px;
+        }
+
+        .about-box p {
+            margin-bottom: 13px;
+            color: #555;
+        }
+
+        /* EDUCATION */
+
+        .education {
+            background: #f0f0eb;
+        }
+
+        .education-card {
+            background: white;
+            padding: 30px;
+            border-left: 4px solid #829783;
+            border-radius: 5px;
+            max-width: 700px;
+        }
+
+        .education-card h3 {
+            color: #344c42;
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* SKILLS */
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .skill {
+            background: #e9eee8;
+            color: #344c42;
+            padding: 13px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background: #f0f0eb;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #344c42;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+        }
+
+        .project-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #344c42;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 8%;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-card {
+                width: 230px;
+                height: 280px;
+            }
+
+            section {
+                padding: 65px 8%;
+            }
+
+            .about,
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="logo">PRG.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <div class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="intro">HELLO, WELCOME TO MY PORTFOLIO</div>
+
+            <h1>
+                Preethi Renee
+                <span>Gregory.</span>
+            </h1>
+
+            <p>
+                Second-year Data Science and Mathematics student
+                with an interest in technology, analytical thinking,
+                and solving real-world problems through data.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#about" class="btn primary">Discover More</a>
+                <a href="#contact" class="btn secondary">Get in Touch</a>
+            </div>
+
+        </div>
+
+        <div class="hero-card">
+            <div>
+                <p>Curious mind.</p>
+                <p>Analytical thinker.</p>
+                <p>Always learning.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section id="about">
+
+        <div class="about">
+
+            <div class="about-text">
+
+                <div class="section-label">GET TO KNOW ME</div>
+
+                <h2 class="section-title">About Me</h2>
+
+                <p>
+                    Hi! I'm Preethi Renee Gregory, an undergraduate
+                    student pursuing Data Science and Mathematics.
+                    I am currently in my second year, fourth semester.
+                </p>
+
+                <p>
+                    I enjoy exploring how mathematics, programming,
+                    and technology come together to transform data
+                    into meaningful insights.
+                </p>
+
+                <p>
+                    I am continuously working on developing my
+                    technical knowledge, improving my problem-solving
+                    abilities, and gaining practical experience
+                    through academic and personal projects.
+                </p>
+
+            </div>
+
+            <div class="about-box">
+
+                <h3>A Little About Me</h3>
+
+                <p><strong>Name:</strong> Preethi Renee Gregory</p>
+                <p><strong>Year:</strong> Second Year</p>
+                <p><strong>Semester:</strong> Fourth Semester</p>
+                <p><strong>Degree:</strong> Data Science and Mathematics</p>
+                <p><strong>Interests:</strong> Data Analytics, Technology, Programming</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+<div class="education-card">
+
+    <h3>CHRIST (Deemed to be University)</h3>
+
+    <p><strong>Degree:</strong> B.Sc. Data Science and Mathematics</p>
+
+    <p><strong>University:</strong> CHRIST University</p>
+
+    <p><strong>Current Year:</strong> Second Year</p>
+
+    <p><strong>Current Semester:</strong> Semester IV</p>
+
+    <p>
+        Currently pursuing an undergraduate degree at CHRIST
+        (Deemed to be University), developing a strong foundation
+        in mathematics, statistics, programming, and data science.
+    </p>
+
+</div>
+
+    </section>
+
+
+    <!-- SKILLS SECTION -->
+
+    <section id="skills">
+
+        <div class="section-label">WHAT I WORK WITH</div>
+
+        <h2 class="section-title">Skills & Interests</h2>
+
+        <p>
+            Some of the areas I am exploring and developing
+            throughout my academic journey.
+        </p>
+
+        <div class="skills-container">
+
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">SQL</div>
+            <div class="skill">HTML & CSS</div>
+            <div class="skill">Mathematics</div>
+            <div class="skill">Statistics</div>
+            <div class="skill">Data Analysis</div>
+            <div class="skill">Problem Solving</div>
+            <div class="skill">Data Visualization</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+
+    <section class="projects" id="projects">
+
+        <div class="section-label">MY WORK</div>
+
+        <h2 class="section-title">Projects & Experience</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+
+                <h3>Academic Projects</h3>
+
+                <p>
+                    Exploring the applications of mathematics,
+                    statistics, and programming through academic
+                    projects and practical assignments.
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <h3>Data Science Projects</h3>
+
+                <p>
+                    Developing practical skills in data processing,
+                    analysis, visualization, and extracting
+                    meaningful insights from datasets.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-label">LET'S CONNECT</div>
+
+        <h2 class="section-title">Get in Touch</h2>
+
+        <p>
+            I'm always interested in learning, collaborating,
+            and exploring new opportunities.
+            Feel free to connect with me!
+        </p>
+
+        <a href="mailto:yourmail@example.com" class="btn primary">
+            Email Me
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>© 2026 Preethi Renee Gregory | Personal Portfolio</p>
+
+    </footer>
+
+</body>
+</html>
